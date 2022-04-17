@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="icon" href="../img/burger.png">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/admin-styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/validacion.js"></script>
+
+
+	<title>Inicio(Administrador)</title>
+</head>
+<body>
+	<header>
+		<nav>
+			<p  class="logo-name">RESTAURANT</p>
+			<p>LA PLAZUELA DE LA SALCHICHA</p>
+		</nav>
+	</header>
+
+	
+	<!--Tabs-->
+	<div class="content-menu">
+		<div class="menu">
+			<input type="button" class="title_menu" value="Pedidos" onclick="consultar(1);"></input>
+			<input type="button" class="title_menu" value="Clientes" onclick="consultar(2);"></input>
+			<input type="button" class="title_menu" value="Productos" onclick="consultar(3);"></input>
+
+			<label for="active" class="content_buscador">
+				<input type="checkbox" id="active" class="checkbox">
+				<input type="text" class="input_buscar" id="input_buscar" onkeypress="buscar();">
+				<div class="sugerencia">Mejor si ingresas 2 caracteres.</div>
+				<img class="ico_buscar" src="../img/search_icon.svg">
+			</label>
+			
+			<div class="agregar">
+				<img class="icon_agregar" onclick="agregar(1);" src="../img/agregar.svg">
+				<img class="icon_eliminados" onclick="eliminados();" src="../img/trash.svg">
+				<a href="../vista/login.php"><img src="../img/desconectar.svg" alt=""></a>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div class="content-tabs" id="content_tabs">
+		<!--Contenido de las tablas-->    
+	</div>
+
+	<div class="capa_ventana_accion" id="capa_ventana_accion" onclick="des_ventana();"></div>
+	<div class="ventana_accion" id="ventana_accion">
+		<h1>Agregar o Editar</h1>
+		<form action="" class="form_datos" id="form_datos">
+		</form>
+	</div>
+
+	<div id="prueba"></div>
+
+	<!------------------------------------Ajax---------------------------------------->
+	<script src="../js/ajax_crud.js"></script>
+</body>
+</html>
